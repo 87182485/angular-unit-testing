@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <script src="bower_components/d3/d3.js"></script>
+    <title></title>
+</head>
+<body>
+</body>
+<script>
+    var rainbow = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet'];
+    var arc = d3.svg.arc()
+            .innerRadius(30)
+    // the outer radius of the rainbow is set from the index in the rainbow array
+    .outerRadius(function(d, i){ return (rainbow.length - i) * 20 + 30})
+    .startAngle(-Math.PI / 2).endAngle(Math.PI / 2);
+
+    d3.select('body').append('svg')
+            .selectAll('path').data(rainbow).enter().append('path')
+            .attr({
+                d: arc,
+                transform: 'translate(200,200)',
+                fill: function(d){return d}
+            });
+</script>
+</html>
