@@ -30,8 +30,6 @@ function donutChart(){
         scope.$watch('data', function (){
             arcs.data(pie(data)).attr('d', arc);
         },true);
-
-
     }
 
     return {
