@@ -20,7 +20,9 @@
 		return service;
 
 		function getMovies(url){
-			$http.get(url)
+			$http.get(url, {
+        headers : {'Content-Type': 'application/json'}
+      })
 			.then(function(data){
 				defer.resolve(data);
 			},
