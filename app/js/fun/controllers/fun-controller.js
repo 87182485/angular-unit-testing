@@ -16,7 +16,7 @@
 
 		vm.tagColor = tagColor;
 
-		vm.promise = FunService.getMovies('movie.json').then(function(promise){
+		vm.promise = FunService.getMovies('http://api.androidhive.info/json/movies.json').then(function(promise){
 			vm.movies = promise.data;
 		});
 
