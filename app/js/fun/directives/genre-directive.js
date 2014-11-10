@@ -9,9 +9,9 @@
 		return {
 			restrict: 'EA',
 			scope: true,
-			require:'ngModel',
+			require:'^ngModel',
 			controller: 'FunController',
 			templateUrl: 'partials/fun/genres.html'
 		}
-	};
+	}
 })();
